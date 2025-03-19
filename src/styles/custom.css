@@ -74,3 +74,54 @@
 .orange-shadow {
   box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3); /* Оранжевая тень */
 }
+
+/* Yellow accents */
+.yellow-text {
+  color: #ffd700; /* Золотисто-желтый цвет текста */
+}
+
+.yellow-border {
+  border: 2px solid #ffd700; /* Золотисто-желтая рамка */
+}
+
+.yellow-bg {
+  background-color: #ffd700; /* Золотисто-желтый фон */
+}
+
+.yellow-shadow {
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3); /* Золотисто-желтая тень */
+}
+
+.yellow-gradient {
+  background: linear-gradient(to right, #ffd700, #ffa500); /* Градиент от желтого к оранжевому */
+}
+
+/* Green accents */
+.green-text {
+  color: #32cd32; /* Лаймово-зеленый цвет текста */
+}
+
+.green-border {
+  border: 2px solid #32cd32; /* Лаймово-зеленая рамка */
+}
+
+.green-bg {
+  background-color: #32cd32; /* Лаймово-зеленый фон */
+}
+
+.green-shadow {
+  box-shadow: 0 4px 12px rgba(50, 205, 50, 0.3); /* Лаймово-зеленая тень */
+}
+
+.green-gradient {
+  background: linear-gradient(to right, #32cd32, #228b22); /* Градиент от светлого к темно-зеленому */
+}
+
+/* Combined accents */
+.yellow-green-gradient {
+  background: linear-gradient(to right, #ffd700, #32cd32); /* Градиент от желтого к зеленому */
+}
+
+.orange-green-gradient {
+  background: linear-gradient(to right, #ff7f50, #32cd32); /* Градиент от оранжевого к зеленому */
+}
