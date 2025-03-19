@@ -8,7 +8,7 @@
 
 /* User profile section */
 .user-avatar {
-  border: 3px solid rgba(255, 255, 255, 0.6);
+  border: 3px solid rgba(255, 165, 0, 0.6); /* Оранжевая рамка */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -44,9 +44,9 @@
 }
 
 .buy-button:hover {
-  background: linear-gradient(to right, #1e40af, #1e293b);
+  background: linear-gradient(to right, #ff7f50, #ff4500); /* Оранжевый градиент */
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3); /* Оранжевая тень */
 }
 
 /* Carousel customization */
@@ -56,4 +56,21 @@
 
 .swiper-slide:not(.swiper-slide-active) {
   opacity: 0.6;
+}
+
+/* Additional orange accents */
+.orange-text {
+  color: #ff7f50; /* Оранжевый цвет текста */
+}
+
+.orange-border {
+  border: 2px solid #ff7f50; /* Оранжевая рамка */
+}
+
+.orange-bg {
+  background-color: #ff7f50; /* Оранжевый фон */
+}
+
+.orange-shadow {
+  box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3); /* Оранжевая тень */
 }
