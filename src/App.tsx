@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#0f172a]">
       {/* User Profile Section */}
       <div className="header-gradient p-6">
         <div className="flex items-center gap-4">
@@ -45,7 +45,7 @@ function App() {
 
       {/* Products Section */}
       <div className="p-4">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">Featured Products</h2>
+        <h2 className="text-2xl font-bold text-white mb-6">Featured Products</h2>
         <ProductCarousel />
       </div>
     </div>

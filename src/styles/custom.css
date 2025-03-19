@@ -2,126 +2,64 @@
 
 /* Gradient header */
 .header-gradient {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* User profile section */
 .user-avatar {
-  border: 3px solid rgba(255, 165, 0, 0.6); /* Оранжевая рамка */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 3px solid #00c6ff;
+  box-shadow: 0 4px 12px rgba(0, 198, 255, 0.3);
 }
 
 .user-name {
-  color: #f8fafc;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #e0e0e0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Product card styles */
 .product-card {
-  background-color: #1e293b;
-  color: #f8fafc;
-  transition: transform 0.2s ease-in-out;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #2c3e50, #34495e);
+  color: #f5f5f5;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 10px -1px rgba(0, 0, 0, 0.4), 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
 
 .product-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
 }
 
 .product-image {
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .product-card:hover .product-image {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .buy-button {
-  transition: all 0.2s ease;
-  background: linear-gradient(to right, #2563eb, #1e40af);
-  color: #f8fafc;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  transition: all 0.3s ease;
 }
 
 .buy-button:hover {
-  background: linear-gradient(to right, #ff7f50, #ff4500); /* Оранжевый градиент */
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3); /* Оранжевая тень */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 114, 255, 0.5);
+  background: linear-gradient(to right, #0072ff, #00c6ff);
 }
 
 /* Carousel customization */
 .swiper-slide {
-  transition: opacity 0.3s ease;
+  transition: all 0.4s ease;
+  opacity: 0.3;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .swiper-slide:not(.swiper-slide-active) {
-  opacity: 0.6;
-}
-
-/* Additional orange accents */
-.orange-text {
-  color: #ff7f50; /* Оранжевый цвет текста */
-}
-
-.orange-border {
-  border: 2px solid #ff7f50; /* Оранжевая рамка */
-}
-
-.orange-bg {
-  background-color: #ff7f50; /* Оранжевый фон */
-}
-
-.orange-shadow {
-  box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3); /* Оранжевая тень */
-}
-
-/* Yellow accents */
-.yellow-text {
-  color: #ffd700; /* Золотисто-желтый цвет текста */
-}
-
-.yellow-border {
-  border: 2px solid #ffd700; /* Золотисто-желтая рамка */
-}
-
-.yellow-bg {
-  background-color: #ffd700; /* Золотисто-желтый фон */
-}
-
-.yellow-shadow {
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3); /* Золотисто-желтая тень */
-}
-
-.yellow-gradient {
-  background: linear-gradient(to right, #ffd700, #ffa500); /* Градиент от желтого к оранжевому */
-}
-
-/* Green accents */
-.green-text {
-  color: #32cd32; /* Лаймово-зеленый цвет текста */
-}
-
-.green-border {
-  border: 2px solid #32cd32; /* Лаймово-зеленая рамка */
-}
-
-.green-bg {
-  background-color: #32cd32; /* Лаймово-зеленый фон */
-}
-
-.green-shadow {
-  box-shadow: 0 4px 12px rgba(50, 205, 50, 0.3); /* Лаймово-зеленая тень */
-}
-
-.green-gradient {
-  background: linear-gradient(to right, #32cd32, #228b22); /* Градиент от светлого к темно-зеленому */
-}
-
-/* Combined accents */
-.yellow-green-gradient {
-  background: linear-gradient(to right, #ffd700, #32cd32); /* Градиент от желтого к зеленому */
-}
-
-.orange-green-gradient {
-  background: linear-gradient(to right, #ff7f50, #32cd32); /* Градиент от оранжевого к зеленому */
+  transform: scale(0.85);
 }
