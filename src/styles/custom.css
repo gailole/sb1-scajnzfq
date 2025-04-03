@@ -1,65 +1,195 @@
 /* Custom dark theme for the Telegram WebApp */
 
+/* Set Telegram WebApp theme color */
+:root {
+  color-scheme: dark;
+}
+
 /* Gradient header */
 .header-gradient {
-  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  background: var(--surface-color);
+  box-shadow: var(--shadow-large);
 }
 
 /* User profile section */
 .user-avatar {
-  border: 3px solid #00c6ff;
-  box-shadow: 0 4px 12px rgba(0, 198, 255, 0.3);
+  border: 3px solid var(--accent-dark);
+  box-shadow: var(--shadow-medium);
 }
 
 .user-name {
-  color: #e0e0e0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: var(--text-color);
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 2px;
 }
 
 /* Product card styles */
 .product-card {
-  background: linear-gradient(145deg, #2c3e50, #34495e);
-  color: #f5f5f5;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 6px 10px -1px rgba(0, 0, 0, 0.4), 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  background: var(--surface-color);
+  color: var(--text-color);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-small);
+  height: 100%;
+  width: 100%;
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+  border: var(--border-subtle);
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-color);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.product-card:hover::before {
+  opacity: 1;
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+  border: var(--border-medium);
 }
 
 .product-image {
-  transition: transform 0.5s ease;
+  transition: transform var(--transition-slow);
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+  filter: saturate(0.9) contrast(1.1);
 }
 
 .product-card:hover .product-image {
   transform: scale(1.1);
 }
 
-.buy-button {
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  transition: all 0.3s ease;
-}
-
-.buy-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 114, 255, 0.5);
-  background: linear-gradient(to right, #0072ff, #00c6ff);
-}
-
 /* Carousel customization */
-.swiper-slide {
-  transition: all 0.4s ease;
-  opacity: 0.3;
+.product-carousel {
+  padding: 12px 0;
+  overflow: visible !important;
+  touch-action: pan-y pinch-zoom;
 }
 
-.swiper-slide-active {
-  opacity: 1;
-  transform: scale(1.1);
+.carousel-slide {
+  height: auto;
+  transition: all var(--transition-normal);
+  opacity: 1 !important;
+  transform: none !important;
+  display: flex;
 }
 
-.swiper-slide:not(.swiper-slide-active) {
-  transform: scale(0.85);
+.carousel-slide:active {
+  cursor: grabbing;
+}
+
+/* Workflow steps styling */
+.workflow-step {
+  background: var(--surface-color);
+  transition: all var(--transition-normal);
+  border: var(--border-subtle);
+}
+
+.workflow-step:hover {
+  transform: translateX(8px);
+  background: var(--accent-dark);
+}
+
+.workflow-step:hover h3 {
+  color: var(--deep-dark);
+}
+
+.workflow-icon-container {
+  background: rgba(102, 252, 241, 0.1);
+  border: var(--border-accent);
+}
+
+/* Modal styling */
+.modal-overlay {
+  backdrop-filter: blur(8px);
+  background-color: rgba(11, 12, 16, var(--overlay-opacity));
+}
+
+.modal-content {
+  background: var(--surface-color);
+  border: var(--border-accent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .product-image {
+    height: 140px;
+  }
+  
+  .product-carousel {
+    padding: 8px 0;
+  }
+
+  .product-card {
+    min-height: 260px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-image {
+    height: 180px;
+  }
+  
+  .product-carousel {
+    padding: 16px 0;
+  }
+
+  .product-card {
+    min-height: 300px;
+  }
+}
+
+/* CSS Custom Properties from theme */
+:root {
+  /* Colors */
+  --deep-dark: #0B0C10;
+  --surface-color: #1F2833;
+  --text-color: #C5C6C7;
+  --accent-color: #66FCF1;
+  --accent-dark: #45A29E;
+
+  /* Opacity */
+  --overlay-opacity: 0.85;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Shadows */
+  --shadow-small: 0 2px 4px rgba(11, 12, 16, 0.6);
+  --shadow-medium: 0 4px 6px rgba(11, 12, 16, 0.7);
+  --shadow-large: 0 4px 15px rgba(11, 12, 16, 0.6);
+
+  /* Borders */
+  --border-subtle: 1px solid rgba(69, 162, 158, 0.2);
+  --border-medium: 1px solid rgba(69, 162, 158, 0.4);
+  --border-accent: 1px solid rgba(102, 252, 241, 0.2);
+
+  /* Telegram WebApp theme */
+  --tg-theme-bg-color: var(--deep-dark);
+  --tg-theme-secondary-bg-color: var(--surface-color);
+  --tg-theme-text-color: var(--text-color);
+  --tg-theme-hint-color: var(--accent-color);
+  --tg-theme-link-color: var(--accent-dark);
+  --tg-theme-button-color: var(--accent-color);
+  --tg-theme-button-text-color: var(--deep-dark);
+}
+
+/* Base styles */
+body {
+  background-color: var(--deep-dark) !important;
 }

@@ -2,60 +2,109 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ProductCard } from './ProductCard';
 import 'swiper/css';
-import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
+import { FreeMode } from 'swiper/modules';
 
-const products = [
+// Массив продуктов с описанием услуг
+export const products = [
   {
     id: 1,
-    title: "Digital Marketing Course",
+    title: "Разработка ботов в Salebot",
     price: 199,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Master digital marketing strategies with this comprehensive course."
+    image: "https://files.salebot.pro/uploads/file_item/file/595486/salebot.png",
+    description: "Сохрани клиентскую базу — переведи аудиторию в бота. Анализируй и сегментируй, запускай геймификацию, онлайн-продажи, подписки и другие механики вовлечения и монетизации."
   },
   {
     id: 2,
-    title: "Business Consultation",
+    title: "Онлайн-школы на GetCource",
     price: 299,
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "One-on-one business consultation to grow your company."
+    image: "https://files.salebot.pro/uploads/file_item/file/595486/get.png",
+    description: "Getcourse — сервис для онлайн-обучения, воронок продаж, рассылок и вебинаров. Подходит экспертам и школам: удобно вести курсы, автоматизировать продажи и работать с клиентами."
   },
   {
     id: 3,
-    title: "Social Media Strategy",
+    title: "Автоматизация с n8n",
     price: 149,
-    image: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Develop an effective social media strategy for your brand."
+    image: "https://files.salebot.pro/uploads/file_item/file/595486/3.png",
+    description: "Нужно связать сервисы? Настрою n8n на своём сервере — он автоматизирует любые процессы между сервисами с открытым API: сложные цепочки, логика условий, обработка данных и интеграции в одном потоке."
   },
   {
     id: 4,
-    title: "SEO Optimization",
+    title: "Приложение в Telegram",
     price: 249,
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Improve your website's search engine rankings."
+    image: "https://files.salebot.pro/uploads/file_item/file/595486/webapp2.png",
+    description: "Web App для Telegram — идеальный способ превратить вашего бота в полноценное приложение с интерфейсом, API-интеграцией и логикой на стороне сервера."
   },
   {
     id: 5,
-    title: "Content Creation Workshop",
+    title: "Интеграция ИИ от OpenAI",
     price: 179,
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Learn to create engaging content for your audience."
+    image: "https://files.salebot.pro/uploads/file_item/file/595486/gpt2.png",
+    description: "Интегрирую OpenAI API в ваши продукты — реализую умные сценарии: автоответы, персонализированные подсказки, интеллектуальный разбор запросов, анализ текста и генерацию контента под любые задачи."
   }
 ];
 
 export const ProductCarousel: React.FC = () => {
   return (
-    <Swiper
-      spaceBetween={20}
-      slidesPerView={1.2}
-      centeredSlides={true}
-      loop={true}
-      className="w-full py-4"
-    >
-      {products.map((product) => (
-        <SwiperSlide key={product.id}>
-          <ProductCard {...product} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="relative">
+      {/* Настройка карусели Swiper с адаптивным отображением */}
+      <Swiper
+        modules={[FreeMode]}
+        freeMode={{
+          enabled: true,
+          sticky: false,
+          momentumBounce: false,
+          momentumVelocityRatio: 0.8
+        }}
+        grabCursor={true}
+        resistance={true}
+        resistanceRatio={0.85}
+        breakpoints={{
+          // Мобильные устройства
+          320: {
+            slidesPerView: 1.2,
+            spaceBetween: 16,
+            slidesOffsetBefore: 16,
+            slidesOffsetAfter: 16
+          },
+          // Планшеты (малые)
+          480: {
+            slidesPerView: 1.5,
+            spaceBetween: 16,
+            slidesOffsetBefore: 16,
+            slidesOffsetAfter: 16
+          },
+          // Планшеты
+          640: {
+            slidesPerView: 2.2,
+            spaceBetween: 20,
+            slidesOffsetBefore: 20,
+            slidesOffsetAfter: 20
+          },
+          // Десктопы
+          1024: {
+            slidesPerView: 3.2,
+            spaceBetween: 24,
+            slidesOffsetBefore: 24,
+            slidesOffsetAfter: 24
+          },
+          // Большие экраны
+          1280: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            slidesOffsetBefore: 30,
+            slidesOffsetAfter: 30
+          }
+        }}
+        className="product-carousel"
+      >
+        {/* Отображение карточек продуктов */}
+        {products.map((product) => (
+          <SwiperSlide key={product.id} className="carousel-slide">
+            <ProductCard {...product} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
