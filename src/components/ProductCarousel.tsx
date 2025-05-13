@@ -47,7 +47,6 @@ export const products = [
 export const ProductCarousel: React.FC = () => {
   return (
     <div className="relative">
-      {/* Настройка карусели Swiper с адаптивным отображением */}
       <Swiper
         modules={[FreeMode]}
         freeMode={{
@@ -60,45 +59,39 @@ export const ProductCarousel: React.FC = () => {
         resistance={true}
         resistanceRatio={0.85}
         breakpoints={{
-          // Мобильные устройства
           320: {
             slidesPerView: 1.2,
             spaceBetween: 16,
-            slidesOffsetBefore: 16,
+            slidesOffsetBefore: 0,
             slidesOffsetAfter: 16
           },
-          // Планшеты (малые)
           480: {
             slidesPerView: 1.5,
             spaceBetween: 16,
-            slidesOffsetBefore: 16,
+            slidesOffsetBefore: 0,
             slidesOffsetAfter: 16
           },
-          // Планшеты
           640: {
             slidesPerView: 2.2,
             spaceBetween: 20,
-            slidesOffsetBefore: 20,
+            slidesOffsetBefore: 0,
             slidesOffsetAfter: 20
           },
-          // Десктопы
           1024: {
             slidesPerView: 3.2,
             spaceBetween: 24,
-            slidesOffsetBefore: 24,
+            slidesOffsetBefore: 0,
             slidesOffsetAfter: 24
           },
-          // Большие экраны
           1280: {
             slidesPerView: 4,
             spaceBetween: 30,
-            slidesOffsetBefore: 30,
+            slidesOffsetBefore: 0,
             slidesOffsetAfter: 30
           }
         }}
         className="product-carousel"
       >
-        {/* Отображение карточек продуктов */}
         {products.map((product) => (
           <SwiperSlide key={product.id} className="carousel-slide">
             <ProductCard {...product} />

@@ -12,7 +12,7 @@ const steps = [
   {
     icon: Search,
     title: 'Брифинг',
-    detailedDescription: 'Совместно с клиентом обсуждаем цели проекта и ключевые задачи. Проводим созвон или переписку, чтобы лучше понять аудиторию и ожидания от продукта. Вместе формируем общее видение, на котором будет строиться вся дальнейшая работа.',
+    detailedDescription: 'Совместно обсуждаем цели проекта и ключевые задачи. Проводим созвон или переписку, чтобы лучше понять аудиторию и ожидания от продукта. Вместе формируем общее видение, на котором будет строиться вся дальнейшая работа.',
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000'
   },
   {
@@ -30,14 +30,14 @@ const steps = [
   {
     icon: TestTube,
     title: 'Тестирование',
-    detailedDescription: 'Проверяю, как работает продукт: устраняю баги, обращаю внимание на корректность работы всех функций. Даю доступ клиенту для самостоятельного тестирования. Если в процессе появляются пожелания, не входящие в первоначальное техническое задание, мы оформляем дополнительное задание и согласовываем стоимость доработок.',
-    image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=1000'
+    detailedDescription: 'Проверяю, как работает продукт: устраняю баги, обращаю внимание на корректность работы всех функций. Передаю доступы для самостоятельного тестирования. Если в процессе появляются пожелания, не входящие в первоначальное техническое задание, оформляем дополнительное задание и согласовываем стоимость доработок.',
+    image: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80&w=1000'
   },
   {
     icon: Rocket,
     title: 'Релиз',
     detailedDescription: 'Запускаю продукт и настраиваю всё для его полноценной работы. В первые дни после запуска оказываю поддержку, чтобы всё работало стабильно. Также возможно дальнейшее сопровождение — как на постоянной основе, так и в рамках запуска — по отдельной договорённости.',
-    image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1000'
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000'
   }
 ];
 
@@ -67,18 +67,18 @@ const Modal: React.FC<ModalProps> = ({ step, onClose }) => {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-start pt-8 justify-center modal-overlay"
+      className="fixed inset-0 z-50 flex items-center justify-center modal-overlay"
       onClick={onClose}
     >
       <div 
-        className="modal-content rounded-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto mx-4"
+        className="modal-content rounded-xl max-w-2xl w-full mx-4"
         onClick={handleModalClick}
       >
         <div className="p-3">
           <div className="flex justify-end">
             <button 
               onClick={onClose}
-              className="text-[#45A29E] hover:text-[#66FCF1] transition-colors"
+              className="text-white hover:text-[#66FCF1] transition-colors"
             >
               <X className="w-6 h-6" />
             </button>
@@ -89,7 +89,7 @@ const Modal: React.FC<ModalProps> = ({ step, onClose }) => {
               <div className="workflow-icon-container p-3 rounded-lg">
                 <step.icon className="w-6 h-6 text-[#66FCF1]" />
               </div>
-              <h3 className="text-2xl font-bold text-[#66FCF1]">{step.title}</h3>
+              <h3 className="text-2xl font-bold text-white">{step.title}</h3>
             </div>
             
             <img 
@@ -98,7 +98,7 @@ const Modal: React.FC<ModalProps> = ({ step, onClose }) => {
               className="w-full h-48 object-cover rounded-lg"
             />
             
-            <p className="text-[#C5C6C7] leading-relaxed">
+            <p className="text-white leading-relaxed">
               {step.detailedDescription}
             </p>
           </div>
@@ -112,9 +112,9 @@ export const WorkflowDiagram: React.FC = () => {
   const [selectedStep, setSelectedStep] = useState<typeof steps[0] | null>(null);
 
   return (
-    <div className="py-8 px-4">
-      <h2 className="text-2xl font-bold text-[#66FCF1] mb-8 max-w-7xl mx-auto">Этапы работы</h2>
-      <div className="max-w-2xl mx-auto space-y-2">
+    <div>
+      <h2 className="text-2xl font-bold text-white mb-5">Этапы работы</h2>
+      <div className="max-w-2xl space-y-2">
         {steps.map((step) => (
           <div key={step.title} className="relative">
             <button 
@@ -126,7 +126,7 @@ export const WorkflowDiagram: React.FC = () => {
                   <step.icon className="w-4 h-4 text-[#66FCF1]" />
                 </div>
                 <div className="flex-grow">
-                  <h3 className="text-lg font-semibold text-[#C5C6C7]">{step.title}</h3>
+                  <h3 className="text-lg font-semibold text-white">{step.title}</h3>
                 </div>
               </div>
             </button>
@@ -142,4 +142,4 @@ export const WorkflowDiagram: React.FC = () => {
       )}
     </div>
   );
-};
+}
